@@ -60,6 +60,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $favorites;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isMuted;
+
     public function __construct()
     {
         $this->favorites = new ArrayCollection();
@@ -216,6 +221,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $favorite->setTargetUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsMuted(): ?bool
+    {
+        return $this->isMuted;
+    }
+
+    public function setIsMuted(?bool $isMuted): self
+    {
+        $this->isMuted = $isMuted;
 
         return $this;
     }

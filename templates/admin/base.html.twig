@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <a href = "{{ path('app_admin_article') }}" class="btn btn-primary">Статьи</a>
+    <a href = "{{ path('app_admin_category') }}" class="btn btn-primary">Категории</a>
+    <a href = "{{ path('app_admin_user') }}" class="btn btn-primary">Пользователи</a>
+    {% block main %}
+    {% endblock %}
+{% endblock %}

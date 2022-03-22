@@ -1,0 +1,15 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello AdminArticleController!{% endblock %}
+
+{% block main %}
+    <a href = "{{ path('app_admin_article_create') }}">Создать статью</a>
+
+    {% for article in articles %}
+        <div>
+            <h2>{{ article.name }}</h2>
+            <p>{{ article.shortContent }}</p>
+            <a href = "{{ path('app_admin_article_show', {article: article.id}) }}">Посмотреть</a>
+        </div>
+    {% endfor %}
+{% endblock %}

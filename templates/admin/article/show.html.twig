@@ -1,0 +1,9 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello AdminArticleController!{% endblock %}
+
+{% block main %}
+    <div>Категория: {{ article.category.name }}</div>
+    <div>Название: {{ article.name }}</div>
+    <div>{{ article.content }}</div>
+{% endblock %}

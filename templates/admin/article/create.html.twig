@@ -1,0 +1,14 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello AdminArticleController!{% endblock %}
+
+{% block main %}
+    <h1>Статья</h1>
+    {{ form_start(articleForm) }}
+    {{ form_row(articleForm.name) }}
+    {{ form_row(articleForm.shortContent) }}
+    {{ form_row(articleForm.content) }}
+    {{ form_row(articleForm.category) }}
+    <button type = "submit">Добавить статью</button>
+    {{ form_end(articleForm) }}
+{% endblock %}

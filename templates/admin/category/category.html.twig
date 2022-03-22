@@ -1,0 +1,20 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block main %}
+
+<div class="example-wrapper">
+    <h1>Категории</h1>
+    {{ form_start(categoryForm) }}
+    {{ form_row(categoryForm.name) }}
+    <button type = "submit">Добавить категорию</button>
+    {{ form_end(categoryForm) }}
+
+    <br><br><br>
+
+    {% for category in categories %}
+        <div>{{ category.name }} <a href = "{{ path('app_admin_category_delete', {category: category.id}) }}">Удалить</a></div>
+    {% endfor %}
+</div>
+{% endblock %}
